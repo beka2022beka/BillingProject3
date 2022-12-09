@@ -2,6 +2,7 @@ package com.example.billingproject;
 
 public class Billing {
 
+    public static int credits;
     private int client_id;
     private String client_name;
     private String product_Name;
@@ -75,8 +76,20 @@ public class Billing {
                 ", prd_Qty=" + prd_Qty +
                 '}';
     }
+    public double calculateInput()
+    {
+        return this.prd_Price*prd_Qty;
+    }
 
     // calculate method
+    public double CalculateBilling(){
+        double Fed_Tax = 0.075;
+        double Prv_Tax = 0.06;
+
+        return (prd_Price* prd_Qty) + (prd_Price*prd_Qty)* Fed_Tax + (prd_Price*prd_Qty)* Prv_Tax;
+    }
+
 }
+
 
 
